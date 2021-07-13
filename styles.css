@@ -1,0 +1,315 @@
+/* dark grey: #6a7b8b */
+/* light grey: #bbc2c9 */
+/* background white: #f5f5f5 */
+/* text grey: #5c5b5b */
+
+/* GLOBAL */
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-image: radial-gradient(#F8F2ED, #FAF5EF, #FDF6E4);
+  font-family: "Montserrat", sans-serif;
+}
+
+main {
+  margin: auto;
+  padding-left: 6em;
+}
+
+section {
+  margin: 0 20%;
+  border-bottom: 1px solid #7f7635 ;
+   /* #a5fe9d */
+}
+section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 50vh;
+  
+}
+
+img {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+  line-height: 140%;
+  text-transform: lowercase;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 180%;
+  text-transform: lowercase;
+}
+
+@media screen and (max-width: 850px) {
+  section {
+    margin: 0 10%;
+  }
+
+}
+@media screen and (max-width: 500px) {
+  section {
+    margin: 0 5%;
+  }
+
+  /* h1, h2, p {
+  font-size: .8em;
+} */
+}
+
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  width: 6em;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 25%; */
+  /* position: relative; */
+  list-style-type: none;
+}
+
+.sidebar a.active-page{
+  filter: invert(100%);
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.sidebar a {
+  
+  /* margin-top: 6em; */
+  position: relative;
+  color: white;
+  text-decoration: none; 
+  font-size: 1.25em;
+}
+
+.sidebar a:hover {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.sidebar img {
+  /* margin-top: 6em; */
+  position: absolute;
+  width: 6em;
+}
+#top {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#top p {
+  text-align: right;
+  font-size: .6em;
+}
+
+
+/* MAIN */
+
+#myName {
+  text-transform: uppercase
+}
+
+.about p:first-of-type {
+  font-weight: 600;
+}
+
+main img {
+  width: 6em;
+}
+
+.container {
+  overflow: hidden;
+  /* width: 90%; */
+  margin: 5% 0;
+}
+
+.container a {
+  text-decoration: none;
+  color: #632885;
+}
+
+.container a:hover {
+  background-color: rgba(0, 0, 255, 0.5);
+  filter: invert(100%);
+}
+
+.container h1, .container p  {
+  text-decoration: none;
+}
+
+.blog  {
+  width: 80%;
+}
+
+.blog p {
+  line-height: 180%;
+}
+
+/* SQUARE */
+
+/* FOOTER */
+footer {
+  margin-left: 6em;
+}
+
+
+
+/* BLOG */
+/* THanks to: https://rss.bloople.net/ */
+/* Thanks to: https://lfm.xiffy.nl/ */
+/* CURRENTS */
+
+/* .movie p {
+  color: currentColor;
+  cursor: not-allowed;
+  text-decoration: none;
+} */
+
+.movie img {
+  width: 6em;
+}
+
+.movie a {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+.movie p {
+  font-size: 1em;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.movie p:nth-last-child(2) {
+  display: none;
+}
+
+.music {
+  justify-content: stretch;
+}
+
+.music p {
+  font-size: 1em;
+}
+.music a {
+  font-size: 1em;
+}
+
+
+
+
+/* Under Construction  */
+.title {
+  font-size: 2.5rem;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+.wrapper {
+  top: 0;
+  overflow-y: hidden;
+  position: fixed;
+  z-index: 1;
+  animation: scroll 70s linear infinite;
+  background: url("/Assets/canvas0.png"), #111111;
+  color: #eee;
+  height: 100vh;
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  
+}
+
+@keyframes scroll {
+   100%{
+    background-position:0px -3000px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+@media (min-width: 670px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#cover {
+  position: fixed;
+   height: 100%;
+  width: 100%;
+  top:0;
+  left: 0;
+  background: #000;
+  z-index:9999;}
